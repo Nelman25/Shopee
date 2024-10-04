@@ -7,7 +7,7 @@ const ShopItem = ({ item }) => {
 	const cartContext = useContext(CartContext);
 
 	const handleAddItemToCart = () => {
-		cartContext.addItem(item);
+		cartContext.addItem(item);	
 	};
 
 	return (

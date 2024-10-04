@@ -12,7 +12,7 @@ const cartReducer = (state, action) => {
 			(item) => item.id === action.item.id
 		);
 		const existingItem = state.items[existingItemIndex];
-		const updatedItems = [...state.items]; // copy of items array
+		const updatedItems = [...state.items];
 
 		if (existingItemIndex > -1) {
 			const updatedItem = {
@@ -41,6 +41,7 @@ const cartReducer = (state, action) => {
 				...existingItem,
 				quantity: existingItem.quantity - 1,
 			};
+
 			updatedItems[existingItemIndex] = updatedItem;
 		}
 
@@ -67,7 +68,7 @@ export const CartContextProvider = ({ children }) => {
 		removeItem,
 	};
 
-	console.dir(cartContext);
+	console.info(cartContext);
 
 	return (
 		<CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
