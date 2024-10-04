@@ -1,6 +1,15 @@
+import { useContext } from "react";
+import CartContext from "../Store/CartContext.jsx";
 import { currencyFormatter } from "../util/currencyFormat.js";
+import Button from "./ui/Button.jsx";
 
 const ShopItem = ({ item }) => {
+	const cartContext = useContext(CartContext);
+
+	const handleAddItemToCart = () => {
+		cartContext.addItem(item);
+	};
+
 	return (
 		<li className="bg-white grow-0 shrink-0 basis-[18%] border border-slate-300 font-montserrat hover:border-orange-500 hover:border-2 hover:translate-y-[-2px] mb-6">
 			<article>
@@ -17,9 +26,7 @@ const ShopItem = ({ item }) => {
 					</div>
 				</div>
 				<p className="flex justify-center my-2">
-					<button className="bg-yellow-200 px-3 py-1 rounded-xl shadow-sm">
-						Add to Cart
-					</button>
+					<Button onClick={handleAddItemToCart}>Add to Cart</Button>
 				</p>
 			</article>
 		</li>
