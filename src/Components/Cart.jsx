@@ -12,13 +12,13 @@ const Cart = () => {
 		return total + item.price * item.quantity;
 	}, 0);
 
-	const handleIncrementQuantity = () => {
+	const handleIncrementQuantity = (item) => {
+		cartContext.addItem(item);
+	};
 
-	}
-
-	const handleDecrementQuantity = () => {
-
-	}
+	const handleDecrementQuantity = (id) => {
+		cartContext.removeItem(id);
+	};
 
 	const handleCloseCart = () => {
 		userProgressContext.hideCart();
@@ -34,15 +34,32 @@ const Cart = () => {
 			open={userProgressContext.progress === "cart"}
 		>
 			<h2 className="text-3xl font-medium mb-4">Your Cart</h2>
-			<ul className="max-h-[80%] overflow-y-auto overflow-hidden font-light text-xl">
+			<ul className="max-h-[73%] overflow-y-auto overflow-hidden font-light text-xl">
 				{cartContext.items.map((item) => (
 					<li key={item.id} className="mb-4">
-						<div className="flex gap-20 w-full pr-4">
-							<p className="block">{item.name}</p>
+						<div className="flex gap-3 w-full pr-4">
+							<div className="flex gap-10 items-center">
+								<p className="block min-w-[60%]">{item.name}</p>
+								<p className="block text-end mr-4">
+									{currencyFormatter.format(item.price)}
+								</p>
+							</div>
 							<div className="flex items-center gap-2">
-								<button className="bg-yellow-300 size-8 rounded-full font-bold flex items-center justify-center"> + </button>
+								<button
+									onClick={() => handleIncrementQuantity(item)}
+									className="bg-yellow-300 size-8 rounded-full font-bold flex items-center justify-center"
+								>
+									{" "}
+									+{" "}
+								</button>
 								<p className="block w-6 text-center">{item.quantity}</p>
-								<button className="bg-yellow-300 size-8 rounded-full font-bold flex items-center justify-center"> - </button>
+								<button
+									onClick={() => handleDecrementQuantity(item.id)}
+									className="bg-yellow-300 size-8 rounded-full font-bold flex items-center justify-center"
+								>
+									{" "}
+									-{" "}
+								</button>
 							</div>
 						</div>
 					</li>
@@ -56,7 +73,9 @@ const Cart = () => {
 					<Button textOnly onClick={handleCloseCart} className="text-[#7ba2bb]">
 						Close
 					</Button>
-					<Button onClick={handleShowCheckout}>Go to Checkout</Button>
+					<Button className="px-6 py-3 ml-4" onClick={handleShowCheckout}>
+						Go to Checkout
+					</Button>
 				</p>
 			</div>
 		</Modal>
