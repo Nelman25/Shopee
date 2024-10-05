@@ -16,7 +16,7 @@ const Header = () => {
 	}
 
 	return (
-		<header className="flex text-xl text-white font-montserrat font-semibold justify-between items-center py-6 px-32 headerBackground fixed top-0 left-0	w-full h-[7%] z-30 shadow-md">
+		<header className="flex text-xl text-white font-montserrat font-semibold justify-between items-center py-6 px-32 bg-[#27374D] fixed top-0 left-0	w-full h-[7%] z-30 shadow-md">
 			<div className="flex items-center">
 				<img src={shopeeLogo} className="w-32" />
 			</div>

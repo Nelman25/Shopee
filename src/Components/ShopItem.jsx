@@ -11,14 +11,14 @@ const ShopItem = ({ item }) => {
 	};
 
 	return (
-		<li className="bg-white grow-0 shrink-0 basis-[18%] border border-slate-300 font-montserrat hover:border-orange-500 hover:border-2 hover:translate-y-[-2px] mb-6">
+		<li className="bg-[#e5ebee] rounded-md overflow-hidden grow-0 shrink-0 basis-[18%] border border-slate-300 font-montserrat transition-all duration-100 hover:border-[#526D82] hover:border-2 hover:translate-y-[-2px] mb-6">
 			<article>
 				<img src={item.image} alt={item.name} />
 				<div className="py-2 px-1">
 					<div className="line-clamp-2 break-words min-h-[2.5rem] font-medium">
 						<h3>{item.name}</h3>
 					</div>
-					<p className="uppercase text-orange-500 font-semibold my-2">
+					<p className="uppercase text-[#27374D] font-semibold my-2 ml-1">
 						{currencyFormatter.format(item.price)}
 					</p>
 					<div className="line-clamp-2 break-words text-[0.8rem]">
