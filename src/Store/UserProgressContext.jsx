@@ -6,6 +6,7 @@ const UserProgressContext = createContext({
 	hideCart: () => {},
 	showCheckout: () => {},
 	hideCheckout: () => {},
+	searchItems: (text) => {},
 });
 
 export const UserProgressContextProvider = ({ children }) => {
@@ -27,12 +28,17 @@ export const UserProgressContextProvider = ({ children }) => {
 		setUserProgress("");
 	};
 
+	const searchItems = (text) => {
+		setUserProgress(text);
+	};
+
 	const userProgressContext = {
 		progress: userProgress,
 		showCart,
 		hideCart,
 		showCheckout,
 		hideCheckout,
+		searchItems
 	};
 
 	return (

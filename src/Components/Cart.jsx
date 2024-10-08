@@ -1,17 +1,10 @@
 import Modal from "./ui/Modal";
 import { useContext } from "react";
-import { Button } from "./ui/button";
-import CartContext from "../Store/CartContext";
-import { currencyFormatter } from "../util/currencyFormat";
 import UserProgressContext from "../Store/UserProgressContext";
-import {
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TableHeader,
-	TableRow,
-} from "./ui/table";
+import CartContext from "../Store/CartContext";
+import { Button } from "./ui/button";
+import { currencyFormatter } from "../util/currencyFormat";
+import { Table, TableBody, TableCell, TableRow } from "./ui/table";
 
 const Cart = () => {
 	const cartContext = useContext(CartContext);
@@ -38,15 +31,15 @@ const Cart = () => {
 
 	return (
 		<Modal
-			className="w-[80rem] h-[70rem] rounded-xl border bg-[#DDE6ED] border-slate-500 shadow-2xl px-16 py-16 font-montserrat"
+			className="w-[80rem] h-[70rem] rounded-xl border bg-slate-100  shadow-2xl px-16 py-16 font-montserrat text-slate-600"
 			open={userProgressContext.progress === "cart"}
 			onClose={
 				userProgressContext.progress === "cart" ? handleCloseCart : undefined
 			}
 		>
-			<h2 className="text-5xl font-medium mb-4">Your Cart</h2>
+			<h2 className="text-5xl font-medium mb-4 text-slate-800">Your Cart</h2>
 			<div className="max-h-[80%] overflow-y-auto">
-				<div className="text-[1.8rem] flex text-center">
+				<div className="text-[1.8rem] flex text-center text-slate-700">
 					<p className="flex-[2] text-start">Item name</p>
 					<p className="flex-1">Quantity</p>
 					<p className="flex-1">Method</p>
@@ -59,10 +52,11 @@ const Cart = () => {
 								<TableCell className="font-medium w-[40%]">
 									{item.name}
 								</TableCell>
-								<TableCell className="text-center text-[1.4rem]">
+								<TableCell className="text-center text-[1.6rem] text-red-500 font-semibold">
 									<Button
 										variant="ghost"
 										onClick={() => handleIncrementQuantity(item)}
+										className="text-[1.5rem]"
 									>
 										+
 									</Button>
@@ -70,6 +64,7 @@ const Cart = () => {
 									<Button
 										variant="ghost"
 										onClick={() => handleDecrementQuantity(item.id)}
+										className="text-[1.5rem]"
 									>
 										{" "}
 										-{" "}

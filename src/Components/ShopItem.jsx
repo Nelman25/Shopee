@@ -10,7 +10,7 @@ const ShopItem = ({ item }) => {
 	};
 
 	return (
-		<li className="bg-[#e5ebee] rounded-md overflow-hidden grow-0 shrink-0 basis-[18%] border border-slate-300 font-montserrat transition-all duration-100 hover:border-[#526D82] hover:border-2 hover:translate-y-[-2px] mb-6">
+		<li className="bg-white rounded-xl overflow-hidden grow-0 shrink-0 basis-[18%] shadow-md font-montserrat transition-all duration-400 hover:shadow-xl hover:border-2 hover:scale-105 mb-6">
 			<article>
 				<img src={item.image} alt={item.name} />
 				<div className="py-2 px-1">
