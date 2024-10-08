@@ -40,6 +40,9 @@ const Cart = () => {
 		<Modal
 			className="w-[80rem] h-[70rem] rounded-xl border bg-[#DDE6ED] border-slate-500 shadow-2xl px-16 py-16 font-montserrat"
 			open={userProgressContext.progress === "cart"}
+			onClose={
+				userProgressContext.progress === "cart" ? handleCloseCart : undefined
+			}
 		>
 			<h2 className="text-5xl font-medium mb-4">Your Cart</h2>
 			<div className="max-h-[80%] overflow-y-auto">
@@ -93,12 +96,14 @@ const Cart = () => {
 					>
 						Close
 					</Button>
-					<Button
-						className="w-48 px-8 py-3 ml-4 h-12 text-[1.2rem]"
-						onClick={handleShowCheckout}
-					>
-						Go to Checkout
-					</Button>
+					{cartContext.items.length > 0 && (
+						<Button
+							className="w-48 px-8 py-3 ml-4 h-12 text-[1.2rem]"
+							onClick={handleShowCheckout}
+						>
+							Go to Checkout
+						</Button>
+					)}
 				</p>
 			</div>
 		</Modal>

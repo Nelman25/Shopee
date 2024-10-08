@@ -4,6 +4,7 @@ import ShopItems from "./Components/ShopItems";
 import { CartContextProvider } from "./Store/CartContext";
 import { UserProgressContextProvider } from "./Store/UserProgressContext";
 import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
 
 const App = () => {
 	return (
@@ -14,6 +15,7 @@ const App = () => {
 					<ShopItems />
 				</main>
 				<Cart />
+				<Checkout />
 			</CartContextProvider>
 		</UserProgressContextProvider>
 	);

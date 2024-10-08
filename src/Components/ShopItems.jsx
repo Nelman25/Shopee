@@ -37,19 +37,19 @@ const ShopItems = () => {
 							/>
 						</PaginationItem>
 						<PaginationItem className="flex items-center">
-							<PaginationLink href="#" className="text-[2rem] font-normal">
+							<PaginationLink href="#" className="text-[2rem] font-normal mx-6">
 								1
 							</PaginationLink>
-							<PaginationLink href="#" className="text-[2rem] font-normal">
+							<PaginationLink href="#" className="text-[2rem] font-normal mx-6">
 								2
 							</PaginationLink>
-							<PaginationLink href="#" className="text-[2rem] font-normal">
+							<PaginationLink href="#" className="text-[2rem] font-normal mx-6">
 								3
 							</PaginationLink>
-							<PaginationLink href="#" className="text-[2rem] font-normal">
+							<PaginationLink href="#" className="text-[2rem] font-normal mx-6">
 								4
 							</PaginationLink>
-							<PaginationLink href="#" className="text-[2rem] font-normal">
+							<PaginationLink href="#" className="text-[2rem] font-normal mx-6">
 								5
 							</PaginationLink>
 						</PaginationItem>
